@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Landing Page | SkillCraft Technology</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #636469;
+      color: #fff;
+    }
+
+    /* ===== Navbar ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: transparent;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+      z-index: 1000;
+    }
+
+    nav.scrolled {
+      background: rgba(185, 42, 42, 0.95);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #00ffff;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: #13c616;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00ffff;
+      transform: scale(1.1);
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(to right, #0b0c10, #1f2833);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #623849;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      color: #a14e80;
+      margin-bottom: 25px;
+    }
+
+    .hero button {
+      background: #9dc90f;
+      color: #3d8440;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .hero button:hover {
+      background: #31b936;
+    }
+
+    /* ===== About Section ===== */
+    .about {
+      padding: 100px 50px;
+      background: #2b0120;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      color: #014242;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      color: #5c9269;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* ===== Services Section ===== */
+    .services {
+      padding: 100px 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      background: #7b8be3;
+      text-align: center;
+    }
+
+    .service {
+      background: #482613;
+      padding: 40px 20px;
+      border-radius: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 15px rgba(120, 124, 124, 0.3);
+    }
+
+    .service h3 {
+      color: #1b9b9b;
+      margin-bottom: 15px;
+    }
+
+    .service p {
+      color: #eee028;
+      font-size: 1rem;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: #1f2833;
+      padding: 30px 20px;
+      text-align: center;
+      color: #c5c6c7;
+      font-size: 0.9rem;
+    }
+
+    /* ===== Mobile Menu ===== */
+    .menu-icon {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #00ffff;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 15px 20px;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        background: rgba(20, 20, 20, 0.95);
+        width: 200px;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: right 0.4s ease;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="logo">SkillCraft</div>
+    <div class="menu-icon" id="menu-icon">&#9776;</div>
+    <div class="nav-links" id="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+    <h1>Welcome to SkillCraft Technology</h1>
+    <p>Building modern, responsive, and interactive web experiences with creativity and precision.</p>
+    <button>Get Started</button>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+      SkillCraft Technology empowers learners and developers to enhance their technical abilities by
+      working on real-world projects. We focus on skill-based learning to make technology simple,
+      effective, and meaningful.
+    </p>
+  </section>
+
+  <section class="services" id="services">
+    <div class="service">
+      <h3>Web Development</h3>
+      <p>Design and build responsive websites that look great on any device.</p>
+    </div>
+    <div class="service">
+      <h3>App Design</h3>
+      <p>Create user-friendly mobile apps with beautiful UI/UX.</p>
+    </div>
+    <div class="service">
+      <h3>Machine Learning</h3>
+      <p>Explore the power of AI and data-driven solutions with ML models.</p>
+    </div>
+  </section>
+
+  <footer id="contact">
+    © 2025 SkillCraft Technology | All Rights Reserved
+  </footer>
+
+  <script>
+    // Navbar color change on scroll
+    window.addEventListener("scroll", function () {
+      const navbar = document.getElementById("navbar");
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    });
+
+    // Mobile menu toggle
+    const menuIcon = document.getElementById("menu-icon");
+    const navLinks = document.getElementById("nav-links");
+    menuIcon.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
